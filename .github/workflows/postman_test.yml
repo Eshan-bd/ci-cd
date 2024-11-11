@@ -1,4 +1,4 @@
-name: Run Postman API Tests with Newman
+name: Postman API Tests
 
 on:
   push:
@@ -33,5 +33,5 @@ jobs:
 
     - name: Run Postman tests
       run: |
-        newman run postman_collection.json --reporters cli
+        newman run auto_test_postman_collection.json --reporters cli
 
