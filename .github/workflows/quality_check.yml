@@ -35,4 +35,5 @@ jobs:
     - name: Run autopep8 for code formatting
       run: |
         source venv/bin/activate
-        autopep8 --diff .
+        autopep8 --diff $(find . -name "*.py")
+
