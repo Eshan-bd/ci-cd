@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up k6
         run: |
@@ -33,7 +33,7 @@ jobs:
 
       # Step 6: Collect results (optional: Save k6 results to artifacts for review)
       - name: Upload k6 results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: k6-results
           path: ./results
