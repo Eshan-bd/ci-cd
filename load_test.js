@@ -34,4 +34,3 @@ export default function () {
     'Fetched users list': (r) => r.status === 200,
   });
 }
-
