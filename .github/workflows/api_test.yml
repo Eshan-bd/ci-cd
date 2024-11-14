@@ -4,12 +4,15 @@ on:
   push:
     branches:
       - main
+    paths:
+      - app.py
+      - test_api.py
   pull_request:
     branches:
       - main
-  paths:
-    - app.py
-    - test_api.py
+    paths:
+      - app.py
+      - test_api.py
 
 jobs:
   test:
