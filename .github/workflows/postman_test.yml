@@ -4,12 +4,15 @@ on:
   push:
     branches:
       - main
+    paths:
+      - app.py
+      - auto_test_postman_collection.json
   pull_request:
     branches:
       - main
-  paths:
-    - app.py
-    - auto_test_postman_collection.json
+    paths:
+      - app.py
+      - auto_test_postman_collection.json
 
 jobs:
   test:

@@ -4,11 +4,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - app.py
   pull_request:
     branches:
       - main
-  paths:
-    - app.py
+    paths:
+      - app.py
 
 jobs:
   test:
