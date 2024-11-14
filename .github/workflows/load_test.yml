@@ -7,6 +7,9 @@ on:
   pull_request:
     branches:
       - main  # Trigger on pull requests to the 'main' branch
+  paths:
+    - app.py
+    - load_test.js
 
 jobs:
   k6-test:

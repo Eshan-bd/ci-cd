@@ -1,4 +1,4 @@
-name: FastAPI Testing Workflow
+name: Unit Tests
 
 on:
   push:
@@ -7,6 +7,9 @@ on:
   pull_request:
     branches:
       - main
+  paths:
+    - app.py
+    - test_api.py
 
 jobs:
   test:
