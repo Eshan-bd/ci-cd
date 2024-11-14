@@ -1,0 +1,40 @@
+name: K6 Load Test
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the 'main' branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests to the 'main' branch
+
+jobs:
+  k6-test:
+    runs-on: ubuntu-latest  # Run on the latest Ubuntu environment
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up k6
+        run: |
+          wget https://github.com/k6io/k6/releases/download/v0.45.0/k6-v0.45.0-linux-amd64.deb
+          sudo dpkg -i k6-v0.45.0-linux-amd64.deb
+
+      - name: Start FastAPI server
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
+          uvicorn app:app --host 0.0.0.0 --port 8000 &
+
+      - name: Run k6 performance test
+        run: k6 run performance_test.js
+
+      # Step 6: Collect results (optional: Save k6 results to artifacts for review)
+      - name: Upload k6 results
+        uses: actions/upload-artifact@v2
+        with:
+          name: k6-results
+          path: ./results
+
