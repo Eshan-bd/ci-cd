@@ -29,7 +29,7 @@ jobs:
           uvicorn app:app --host 0.0.0.0 --port 8000 &
 
       - name: Run k6 performance test
-        run: k6 run performance_test.js
+        run: k6 run load_test.js
 
       # Step 6: Collect results (optional: Save k6 results to artifacts for review)
       - name: Upload k6 results
