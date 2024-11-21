@@ -10,7 +10,7 @@ users_db = []
 
 class User(BaseModel):
     username: str
-    email: str
+    email: EmailStr
 
 
 @app.post("/users/")
