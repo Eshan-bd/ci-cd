@@ -16,3 +16,4 @@ venv/
 *.swo
 .idea/
 .vscode/
+.coverage
