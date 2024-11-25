@@ -2,7 +2,7 @@ name: Deploy Application
 
 on:
   workflow_run:
-    workflows: [Code Quality Check, Postman API Tests]
+    workflows: [Postman API Tests]
     types: [completed]
 
 jobs:
